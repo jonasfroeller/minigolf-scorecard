@@ -1,0 +1,11 @@
+<main class="container" style="padding-top: 2rem;">
+  @if (names && pars && names.length > 1 && pars.length > 1) {
+    <section class="grid">
+      <article *ngFor="let pars of pars; let i = index">
+        <app-player-scores-component [name]="names[i]" [coursePairs]="pars"></app-player-scores-component>
+      </article>
+    </section>
+  } @else {
+    es gibt keine Spiele...
+  }
+</main>

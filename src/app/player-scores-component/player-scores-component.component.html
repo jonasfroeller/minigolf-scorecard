@@ -1,0 +1,7 @@
+<header style="padding-bottom: 1rem;">
+  {{ name }} ({{ totalStrokes }})
+</header>
+<article *ngFor="let par of coursePairs; let i = index" class="pico-background-slate-800">
+  {{ i+1 }}. ⛳: <app-stroke-counter-component [strokes]="par.strokes" [hole]="i" (strokesChange)="handleStrokesChange($event)"></app-stroke-counter-component>
+  <span [ngClass]="{'pico-color-red-400': par.strokes > par.par}">{{ par.strokes }}/{{ par.par }}</span>
+</article>
